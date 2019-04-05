@@ -1,8 +1,12 @@
 import express from 'express';
+import db from './config/db';
 
 const app = express();
 
-app.use(cors());
+db.authenticate()
+    .then(() => console.log('Database is connected...'))
+    .catch((err) => console.log(err))
+    
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
