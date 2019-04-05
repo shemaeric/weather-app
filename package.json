@@ -1,0 +1,44 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "The weather app using vanilla js",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server",
+    "dev": "nodemon --exec babel-node ./src/server.js",
+    "test": "nyc --reporter=text mocha --exit --require @babel/register --require @babel/polyfill ./src/tests/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shemaeric/weather-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shemaeric/weather-app/issues"
+  },
+  "homepage": "https://github.com/shemaeric/weather-app#readme",
+  "dependencies": {
+    "celebrate": "^9.1.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.1",
+    "express": "^4.16.4",
+    "joi": "^14.3.1",
+    "mocha": "^6.0.2",
+    "moment": "^2.24.0",
+    "nyc": "^13.3.0",
+    "pg": "^7.9.0",
+    "sequelize": "^5.2.12",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.4.3",
+    "coveralls": "^3.0.3",
+    "dotenv": "^7.0.0",
+    "nodemon": "^1.18.10"
+  }
+}
