@@ -6,7 +6,13 @@
   "scripts": {
     "start": "node src/server",
     "dev": "nodemon --exec babel-node ./src/server.js",
-    "test": "nyc --reporter=text mocha --exit --require @babel/register --require @babel/polyfill ./src/tests/*"
+    "test": "nyc --reporter=text mocha --exit --require @babel/register --require @babel/polyfill ./src/tests/*",
+    "make:migration": "node_modules/.bin/sequelize migration:create --name",
+    "make:model": "node_modules/.bin/sequelize model:create --name",
+    "make:seed": "node_modules/.bin/sequelize seed:create --name",
+    "migrate": "node_modules/.bin/sequelize db:migrate",
+    "migrate:refresh": "npm run migrate:reset && npm run migrate",
+    "migrate:reset": "node_modules/.bin/sequelize db:migrate:undo:all"
   },
   "repository": {
     "type": "git",
@@ -30,6 +36,7 @@
     "nyc": "^13.3.0",
     "pg": "^7.9.0",
     "sequelize": "^5.2.12",
+    "sequelize-cli": "^5.4.0",
     "uuid": "^3.3.2"
   },
   "devDependencies": {
